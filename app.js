@@ -5,7 +5,7 @@ const table = document.getElementById('battle_canvas');
 let changeColor = (cell) => {
     let color = 'black';
     cell.style.backgroundColor = color;
-}
+};
 
 function makeGrid() {
     //reset table
@@ -15,8 +15,11 @@ function makeGrid() {
     let height = 7;
     let width = 7;
 
+    //Math for randomize boat positions
+    let PlusOrMinus = (Math.random() <0.5 ? (Math.random() <0.5 ? -1 : 1 ) : (Math.random() <0.5 ? -10 : 10 ));
+
     //Place Computer Boats on board
-    let numPlace = [10, 01, -10, -01];
+    let numPlace = [10, 1, -10, -1];
     let numArray = [];
     for (let i = 0; i < height; i++){
             for (let j = 0; j < width; j++){
@@ -26,7 +29,6 @@ function makeGrid() {
 
     // Carrier - 5 hits
     let compCarrier = numArray[Math.floor(Math.random() * numArray.length)];
-    let PlusOrMinus = (Math.random() <0.5 ? (Math.random() <0.5 ? -1 : 1 ) : (Math.random() <0.5 ? -10 : 10 ));
     let compCarrier2 = compCarrier + PlusOrMinus;
     let compCarrier3 = compCarrier2 + PlusOrMinus;
     let compCarrier4 = compCarrier3 + PlusOrMinus;
@@ -39,10 +41,10 @@ function makeGrid() {
     
     // Battleship - 4 hits
     let compBattleship = numArray[Math.floor(Math.random() * numArray.length)];
-    let PlusOrMinus2 = (Math.random() <0.5 ? (Math.random() <0.5 ? -1 : 1 ) : (Math.random() <0.5 ? -10 : 10 ));
-    let compBattleship2 = compBattleship + PlusOrMinus2;
-    let compBattleship3 = compBattleship2 + PlusOrMinus2;
-    let compBattleship4 = compBattleship3 + PlusOrMinus2;
+
+    let compBattleship2 = compBattleship + PlusOrMinus;
+    let compBattleship3 = compBattleship2 + PlusOrMinus;
+    let compBattleship4 = compBattleship3 + PlusOrMinus;
     // console.log(compBattleship);
     // console.log(compBattleship2);
     // console.log(compBattleship3);
@@ -50,20 +52,17 @@ function makeGrid() {
 
     // Cruiser - 3 hits
     let compCruiser = numArray[Math.floor(Math.random() * numArray.length)];
-    let PlusOrMinus3 = (Math.random() <0.5 ? (Math.random() <0.5 ? -1 : 1 ) : (Math.random() <0.5 ? -10 : 10 ));
-    let compCruiserr2 = compCruiser + PlusOrMinus3;
-    let compCruiserr3 = compCruiserr2 + PlusOrMinus3;
+    let compCruiserr2 = compCruiser + PlusOrMinus;
+    let compCruiserr3 = compCruiserr2 + PlusOrMinus;
 
     // Submarine - 3 hits
     let compSubmarine = numArray[Math.floor(Math.random() * numArray.length)];
-    let PlusOrMinus4 = (Math.random() <0.5 ? (Math.random() <0.5 ? -1 : 1 ) : (Math.random() <0.5 ? -10 : 10 ));
-    let compSubmarine2 = compSubmarine + PlusOrMinus4;
-    let compSubmarine3 = compSubmarine2 + PlusOrMinus4;
+    let compSubmarine2 = compSubmarine + PlusOrMinus;
+    let compSubmarine3 = compSubmarine2 + PlusOrMinus;
 
     // Destroyer - 2 hits
     let compDestroyer = numArray[Math.floor(Math.random() * numArray.length)];
-    let PlusOrMinus5 = (Math.random() <0.5 ? (Math.random() <0.5 ? -1 : 1 ) : (Math.random() <0.5 ? -10 : 10 ));
-    let compDestroyer2 = compDestroyer + PlusOrMinus5;
+    let compDestroyer2 = compDestroyer + PlusOrMinus;
 
     //Making table based on size input
     for (let i = 0; i < height; i++) {
