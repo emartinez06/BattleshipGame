@@ -12,11 +12,11 @@ function makeGrid() {
     table.innerHTML = "";   
     
     // Select size input
-    let height = 7;
-    let width = 7;
+    let height = 10;
+    let width = 10;
 
     //Math for randomize boat positions
-    let PlusOrMinus = (Math.random() <0.5 ? (Math.random() <0.5 ? -1 : 1 ) : (Math.random() <0.5 ? -10 : 10 ));
+    let PlusOrMinus = (Math.random() < 0.5 ? (Math.random() < 0.5 ? -1 : 1 ) : (Math.random() <0.5 ? -10 : 10 ));
 
     //Place Computer Boats on board
     let numPlace = [10, 1, -10, -1];
@@ -33,22 +33,21 @@ function makeGrid() {
     let compCarrier3 = compCarrier2 + PlusOrMinus;
     let compCarrier4 = compCarrier3 + PlusOrMinus;
     let compCarrier5 = compCarrier4 + PlusOrMinus;
-    // console.log(compCarrier);
-    // console.log(compCarrier2);
-    // console.log(compCarrier3);
-    // console.log(compCarrier4);
-    // console.log(compCarrier5);
+    console.log(compCarrier);
+    console.log(compCarrier2);
+    console.log(compCarrier3);
+    console.log(compCarrier4);
+    console.log(compCarrier5);
     
     // Battleship - 4 hits
     let compBattleship = numArray[Math.floor(Math.random() * numArray.length)];
-
     let compBattleship2 = compBattleship + PlusOrMinus;
     let compBattleship3 = compBattleship2 + PlusOrMinus;
     let compBattleship4 = compBattleship3 + PlusOrMinus;
-    // console.log(compBattleship);
-    // console.log(compBattleship2);
-    // console.log(compBattleship3);
-    // console.log(compBattleship4);                      
+    console.log(compBattleship);
+    console.log(compBattleship2);
+    console.log(compBattleship3);
+    console.log(compBattleship4);
 
     // Cruiser - 3 hits
     let compCruiser = numArray[Math.floor(Math.random() * numArray.length)];
